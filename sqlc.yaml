@@ -4,6 +4,7 @@ project:
 packages:
   - name: "db"
     engine: "postgresql"
+    sql_package: "database/sql"
     queries: "./db/query/"
     schema: "./db/migration/"
     path: "./db/sqlc"

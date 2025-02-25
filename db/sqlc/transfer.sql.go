@@ -43,7 +43,7 @@ SELECT id, from_account_id, to_account_id, amount, created_at FROM transfers
 WHERE id = $1 LIMIT 1
 `
 
-func (q *Queries) GetTransfer(ctx context.Context, id int32) (Transfers, error) {
+func (q *Queries) GetTransfer(ctx context.Context, id int64) (Transfers, error) {
 	row := q.db.QueryRowContext(ctx, getTransfer, id)
 	var i Transfers
 	err := row.Scan(
